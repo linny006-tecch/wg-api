@@ -89,7 +89,8 @@ if [ ! -f "$WG_CONFIG" ]; then
 	add-apt-repository ppa:wireguard/wireguard -y
 	apt update
 	echo iptables-persistent iptables-persistent/autosave_v4 boolean true | sudo debconf-set-selections
-	echo iptables-persistent iptables-persistent/autosave_v4 boolean true | sudo debconf-set-selections
+	echo iptables-persistent iptables-persistent/autosave_v6 boolean true | sudo debconf-set-selections
+
 	apt-get -y install iptables-persistent
 	apt install linux-headers-$(uname -r) wireguard qrencode  -y
     elif [ "$DISTRO" == "Debian" ]; then
