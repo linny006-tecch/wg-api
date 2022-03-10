@@ -4,7 +4,7 @@ WG_CONFIG="/etc/wireguard/wg0.conf"
 
 function get_free_udp_port
 {
-    local port=$(shuf -i 2000-65000 -n 1)
+    local port=$(shuf -i 3600-65000 -n 1)
     ss -lau | grep $port > /dev/null
     if [[ $? == 1 ]] ; then
         echo "$port"
